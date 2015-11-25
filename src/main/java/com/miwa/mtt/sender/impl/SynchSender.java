@@ -14,7 +14,7 @@ public class SynchSender implements Sender {
     }
 
     public void Send() {
-        System.out.println("Sending stub" + stub.getName());
+        System.out.println("    [SYNCH] Sending :" + stub.getMessage().getValue());
 
         Client client = Client.create();
         ApplicationProperties properties = ApplicationProperties.getInstance();
