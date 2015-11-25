@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <stub>
     <name>hum</name>
-    <type>asynch</type>
+    <type queueName="test">asynch</type>
     <message>hum</message>
 </stub>

@@ -10,6 +10,10 @@ public class StubType {
     @XmlAttribute(name = "endpoint")
     private String endpoint;
 
+    @XmlAttribute(name = "queueName")
+    private String queueName;
+
+
     @XmlValue
     private String value;
 
@@ -27,5 +31,13 @@ public class StubType {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getQueueName() {
+        return queueName;
+    }
+
+    public void setQueueName(String queueName) {
+        this.queueName = queueName;
     }
 }

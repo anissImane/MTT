@@ -3,6 +3,7 @@ package com.miwa.mtt.sender.impl;
 import com.miwa.mtt.pojo.Stub;
 import com.miwa.mtt.sender.Sender;
 import com.miwa.mtt.util.ApplicationProperties;
+import com.miwa.mtt.util.SelectValue;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
@@ -21,9 +22,9 @@ public class AsynchSender implements Sender {
     public void Send() {
         System.out.println("    [ASYNCH] Sending :" + stub.getMessage().getValue());
 
-        String QUEUE_NAME = ApplicationProperties.getInstance().getProperty("asynch.queue.name");
+        String QUEUE_NAME = SelectValue.getDefault("asynch.queue.name", stub.getType().getQueueName());
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost(ApplicationProperties.getInstance().getProperty("asynch.url"));
         Connection connection = null;
         Channel channel = null;
         try {
