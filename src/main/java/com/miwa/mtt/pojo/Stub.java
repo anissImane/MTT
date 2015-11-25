@@ -4,12 +4,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "stub")
-@XmlType(propOrder = {"name", "type", "message", "filePath"})
+@XmlType(propOrder = {"name", "type", "message", "fileName"})
 public class Stub {
     private String name;
     private StubType type;
     private MessageType message;
-    private String filePath;
+    private String fileName;
 
     public String getName() {
         return name;
@@ -35,11 +35,11 @@ public class Stub {
         this.message = message;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 }

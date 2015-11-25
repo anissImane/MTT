@@ -20,7 +20,7 @@ public class FileSender implements Sender {
 
 
     public void Send() {
-        System.out.println("Sending File");
+        System.out.println("    [File] Sending :" + stub.getFileName());
 
         String server = ApplicationProperties.getInstance().getProperty("file.url");
         String user = ApplicationProperties.getInstance().getProperty("file.username");
@@ -34,11 +34,11 @@ public class FileSender implements Sender {
             ftpClient.enterLocalPassiveMode();
 
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-            String localPath = ApplicationProperties.getInstance().getProperty("file.directory") + File.separatorChar + stub.getFilePath();
+            String localPath = ApplicationProperties.getInstance().getProperty("file.directory") + File.separatorChar + stub.getFileName();
 
             File localFile = new File(localPath);
 
-            String remoteFile = stub.getFilePath();
+            String remoteFile = stub.getFileName();
             InputStream inputStream = new FileInputStream(localFile);
 
             System.out.println("Start uploading: " + localFile.getName());
