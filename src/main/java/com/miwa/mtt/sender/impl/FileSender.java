@@ -23,7 +23,6 @@ public class FileSender implements Sender {
         System.out.println("Sending File");
 
         String server = ApplicationProperties.getInstance().getProperty("file.url");
-        int port = Integer.valueOf(ApplicationProperties.getInstance().getProperty("file.port"));
         String user = ApplicationProperties.getInstance().getProperty("file.username");
         String pass = ApplicationProperties.getInstance().getProperty("file.password");
 
