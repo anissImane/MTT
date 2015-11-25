@@ -5,6 +5,7 @@ import com.miwa.mtt.util.ApplicationProperties;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 
 public class DirectoryBrowser {
@@ -34,7 +35,7 @@ public class DirectoryBrowser {
 
 
     }
-    public void run(String specifyDir) {
+    public void run(String specifyDir) throws FileNotFoundException {
         String testdir = "";
         if (specifyDir != null) {
             testdir = File.separatorChar + specifyDir.replace('.', File.separatorChar);
@@ -47,6 +48,6 @@ public class DirectoryBrowser {
         if (directory.exists())
             runCurrentDirectory(directory);
         if (!directory.exists() && !singleFile.exists())
-            throw new RuntimeException();
+            throw new FileNotFoundException();
     }
 }
