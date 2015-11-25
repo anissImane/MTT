@@ -17,7 +17,7 @@ public class StubsRunner {
 
     public void run() {
 
-        System.out.println("    RUN: " + file.getName());
+        System.out.println("RUNNING file: " + file.getName());
         try {
             JAXBContext context = JAXBContext.newInstance(Stub.class);
             Unmarshaller un = context.createUnmarshaller();

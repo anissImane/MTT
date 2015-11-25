@@ -7,15 +7,13 @@ import com.miwa.mtt.sender.impl.SynchSender;
 
 public class SenderFactory {
     public Sender create(Stub stub) {
-        System.out.println(stub.getType().getValue());
-        if (stub.getType().getValue().equals("asynch")) {
-            return new AsynchSender(stub);
-        }
-        else if (stub.getType().getValue().equals("synch")) {
-            return new SynchSender(stub);
-        }
-        else if (stub.getType().getValue().equals("file")) {
-            return new FileSender(stub);
+        switch (stub.getType().getValue()) {
+            case "asynch":
+                return new AsynchSender(stub);
+            case "synch":
+                return new SynchSender(stub);
+            case "file":
+                return new FileSender(stub);
         }
         throw new RuntimeException();
     }

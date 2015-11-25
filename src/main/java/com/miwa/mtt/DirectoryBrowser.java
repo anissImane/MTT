@@ -42,10 +42,11 @@ public class DirectoryBrowser {
         testdir =  ApplicationProperties.getInstance().properties.getProperty("stubs.directory") + testdir;
         File singleFile = new File(testdir + ".xml");
         File directory = new File(testdir);
-        if (!singleFile.exists() && !directory.exists())
+        if (singleFile.exists())
+            new StubsRunner(singleFile).run();
+        if (directory.exists())
+            runCurrentDirectory(directory);
+        if (!directory.exists() && !singleFile.exists())
             throw new RuntimeException();
-
-        new StubsRunner(singleFile).run();
-        runCurrentDirectory(directory);
     }
 }
