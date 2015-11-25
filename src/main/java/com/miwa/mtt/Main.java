@@ -7,8 +7,14 @@ import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
-        String stubPath = "Clock.SSynch";
+        if (args.length == 0) {
+            System.err.println("Usage: mtt subname1 [subname2, ...]");
+            return;
+        }
+
         ApplicationProperties.getInstance().load("application.properties");
+        // TODO  Handle multiple launch
+        String stubPath = "Clock.Asynch";
         try {
             new DirectoryBrowser().run(stubPath);
         } catch (FileNotFoundException e) {
