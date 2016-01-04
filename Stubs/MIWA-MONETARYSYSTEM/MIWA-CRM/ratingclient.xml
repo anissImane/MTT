@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <stub>
-  <name>s</name>
+  <name>Demande rating client</name>
   <type endpoint="/miwa/api/time">synch</type>
-  <message>{"speed":3}</message>
+  <message mediatype="application/json">{"Id_client" : "001"}</message>
 </stub>
