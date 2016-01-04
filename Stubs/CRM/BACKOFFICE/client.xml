@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <stub>
-    <name>promotion</name>
-    <type queueName="promotion">asynch</type>
+    <name>client</name>
+    <type queueName="client">asynch</type>
     <message mediatype="application/json">
         {"Profil Client":[
         {"client_id":'19714"},
