@@ -33,7 +33,7 @@ release.properties
 
 # web application files
 /web-app/WEB-INF/classes
-application.properties
+*.properties
 # default HSQL database files for production mode
 /prodDb.*
 
